@@ -1,0 +1,3 @@
+# Mark Jupyter Notebooks as documentation so Python is detected as the primary language
+*.ipynb linguist-documentation
+notebooks/*.ipynb linguist-documentation
