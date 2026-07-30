@@ -5,13 +5,16 @@ class Config:
     COINGECKO_BASE_URL = os.environ.get('COINGECKO_BASE_URL', 'https://api.coingecko.com/api/v3')
     CACHE_DEFAULT_TIMEOUT = int(os.environ.get('CACHE_DEFAULT_TIMEOUT', 60))
     REQUEST_TIMEOUT = int(os.environ.get('REQUEST_TIMEOUT', 10))
+    LOG_LEVEL = os.environ.get('LOG_LEVEL', 'INFO')
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    LOG_LEVEL = os.environ.get('LOG_LEVEL', 'DEBUG')
 
 class TestingConfig(Config):
     TESTING = True
     CACHE_DEFAULT_TIMEOUT = 0
+    LOG_LEVEL = 'WARNING'
 
 class ProductionConfig(Config):
     DEBUG = False
